@@ -54,8 +54,8 @@
 	      gmp
 	      dejagnu)
 	(package-native-inputs xbinutils)))
-      (home-page "https://zephyrproject.org")
-      (synopsis "binutils for zephyr RTOS"))))
+      (home-page "")
+      (synopsis "binutils for riscv32"))))
 
 (define-public gcc-riscv32-unknown-elf-12
   (let ((xgcc (cross-gcc "riscv32-unknown-elf"
@@ -120,12 +120,10 @@
 	     (search-path-specification
 	      (variable "CROSS_LIBRARY_PATH")
 	      (files '("riscv32-unknown-elf/lib")))))
-      (home-page "https://zephyrproject.org")
-      (synopsis "GCC for zephyr RTOS"))))
+      (home-page "https://gcc.gnu.org")
+      (synopsis "GCC"))))
 
 (define (riscv32-unknown-elf-toolchain xgcc)
-  "Produce a cross-compiler zephyr toolchain package with the compiler XGCC and the C
-library variant NEWLIB."
     (package
       (name "riscv32-unknown-elf-toolchain")
       (version (package-version xgcc))
@@ -150,11 +148,8 @@ library variant NEWLIB."
        `(("binutils" ,riscv32-unknown-elf-binutils)
 	 ("gcc" ,xgcc)
 	 ))
-      (synopsis "Complete GCC tool chain for ARM zephyrRTOS development")
-      (description "This package provides a complete GCC tool chain for ARM
-bare metal development with zephyr rtos.  This includes the GCC arm-zephyr-eabi cross compiler
-and newlib (or newlib-nano) as the C library.  The supported programming
-language is C.")
+      (synopsis "Complete GCC toolchain for riscv32")
+      (description "GCC")
       (home-page (package-home-page xgcc))
       (license (package-license xgcc))))
 (define-public riscv32-unknown-elf-toolchain-12
