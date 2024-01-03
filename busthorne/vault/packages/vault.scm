@@ -1,4 +1,4 @@
-(define-module (busthorne vault)
+(define-module (busthorne vault packages vault)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (guix packages)
   #:use-module (gnu packages golang)
